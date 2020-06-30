@@ -36,12 +36,17 @@ pipelines:
         execution:
           onExecute:
             - echo "Executing fanin step"
+            - ls -l ./PreMatrix_step1
             - tem=$( ls -l ./PreMatrix_step1| sed -n '2p' )
             - x=$( echo $tem | awk -F " " '{print $NF}' )
+            - echo $x
             - |
               [[ "$x" == "PreMatrix_1.txt" ]]
-         
+              
+              
+            - ls -l ./PreMatrix_step2
             - tem=$( ls -l ./PreMatrix_step2| sed -n '2p' )
-            - x=$( echo $tem | awk -F " " '{print $NF}' )
+            - y=$( echo $tem | awk -F " " '{print $NF}' )
+            - echo $y
             - |
-              [[ "$x" == "PreMatrix_2.txt" ]]   
+              [[ "$y" == "PreMatrix_2.txt" ]]   
