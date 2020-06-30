@@ -30,12 +30,16 @@ pipelines:
         execution:
           onExecute:
             - echo "Executing fanin step"
+            - ls -l ./matrix_step1
             - txt=$( ls -l ./matrix_step1 | sed -n '2p' )
             - y=$( echo $txt | awk -F " " '{print $NF}' )
+            - echo $y
             - |
               [[ "$y" == "PreMatrix_2.txt" ]]
             
+            - ls -l ./matrix_step1/S_PostMatrix_0012
             - tem=$( ls -l ./matrix_step1/S_PostMatrix_0012| sed -n '2p' )
+            - echo $x
             - x=$( echo $tem | awk -F " " '{print $NF}' )
             - |
               [[ "$x" == "PreMatrix_1.txt" ]]
