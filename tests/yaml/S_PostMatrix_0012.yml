@@ -39,8 +39,8 @@ pipelines:
             
             - ls -l ./matrix_step1/S_PostMatrix_0012
             - tem=$( ls -l ./matrix_step1/S_PostMatrix_0012| sed -n '2p' )
-            - echo $x
             - x=$( echo $tem | awk -F " " '{print $NF}' )
+            - echo $x
             - |
               [[ "$x" == "PreMatrix_1.txt" ]]
             
