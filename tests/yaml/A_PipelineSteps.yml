@@ -4,8 +4,8 @@ pipelines:
       - name: api_PipelineSteps
         type: Bash
         configuration:
-          integrations:
-            - name: s_gitHub
+#           integrations:
+#             - name: s_gitHub
         execution:
           onExecute:
             - echo "executing step..."
