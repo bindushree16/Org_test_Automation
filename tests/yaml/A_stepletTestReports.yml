@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: s_gitHub
-      path: jfbetapipeorg/Org_test_Automation
+      path: bindushree16/Org_test_Automation
       
 pipelines:
   - name: Pipelines_martrix
